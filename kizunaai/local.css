@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+
+.fwb { font-weight: bold;}
+#myc .post-body {
+  line-height: 1.6;
+}
+#myc .post-body > * {
+  display: block;
+}
+#myc .post-body > *:not(:last-child) {
+  margin-bottom: 1.6em;
+}
+#myc .post-body strong { font-weight: bold; }
+#myc .post-body em { font-style: italic; }
+
+#myc .post-body li:not(:last-child) {
+  margin-bottom: .4em;
+}
+#myc .post-body ul li::before {
+  padding-right: .4em;
+  content: "・";
+  color: #e60012;
+}
+#myc .post-body ol {
+  padding-left: 1.4em;
+  list-style-type: decimal;
+}
+
+#myc .post-body blockquote {
+  padding: 1.25em 1.5em;
+  border-left: 5px solid #dbdbdb;
+  background-color: whitesmoke;
+}
+
+#myc .post-body .aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+#myc .post-body .alignright { float: right; }
+#myc .post-body .alignleft { float: left; }
+
+#myc .post-body img[class*="wp-image-"],
+#myc .post-body img[class*="attachment-"] {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+#myc.type-music #myc-contents .news-list .list {
+  display: block;
+}
+
+.wpcf7-form-control.wpcf7-radio.type {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wpcf7-form-control.wpcf7-radio.type .wpcf7-list-item {
+  margin: 0;
+  width: 50%;
+}
+.wpcf7-form-control.wpcf7-radio.type .wpcf7-list-item:nth-child(n+3) {
+  margin-top: 8px;
+}
+.wpcf7-form-control.wpcf7-radio.type label {
+  cursor: pointer;
+}
+#myc #myc-contents .contact-content .form-area .row .input-area input[type="radio"] {
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+.centerview span.wpcf7-not-valid-tip {
+  padding-top: .2em;
+  color: #6aebed;
+}
+
+
+/* cf7メッセージ枠 */
+.centerview div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+	border: 2px solid #6aebed;
+}
+.centerview div.wpcf7-mail-sent-ok {
+	border: 2px solid #6aebed;
+}
+.centerview div.wpcf7-mail-sent-ng,
+.centerview div.wpcf7-aborted {
+	border: 2px solid #6aebed;
+}
+.centerview div.wpcf7-spam-blocked {
+	border: 2px solid #6aebed;
+}
+.centerview div.wpcf7-validation-errors,
+.centerview div.wpcf7-acceptance-missing {
+	border: 2px solid #6aebed;
+}
+
+.wpcf7.basic .row.basic {
+  display: none;
+}
+
+@media screen and (min-width: 641px) {
+
+#myc #myc-contents .contact-content .form-area .row.naming { margin-top: 32px;}
+
+}
+@media screen and (min-width: 1000px) {
+
+.wpcf7-form-control.wpcf7-radio.type .wpcf7-list-item:nth-child(n+3) { margin-top: 0;}
+.wpcf7-form-control.wpcf7-radio.type .wpcf7-list-item {
+  width: auto;
+  margin-right: 24px;
+}
+
+}
+
+.grecaptcha-badge { z-index: 49;}
+
+.centerview div.wpcf7 .ajax-loader {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -8px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="./jquery.js"></script>
+
+    <!--script type="text/javascript" src="./ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./ytmovie.js"></script>
+    <script type="text/javascript" src="./MotionSensor.js"></script>
+    <script type="text/javascript" src="./three.js"></script>
+    <script type="module" src="./three.module.js"></script>
+    <script type="text/javascript" src="./Tween.js"></script>
+    <script type="text/javascript" src="./TGALoader.js"></script>
+    <script type="text/javascript" src="./mmdparser.js"></script>
+    <script type="text/javascript" src="./MMDLoader.js"></script>
+    <script type="text/javascript" src="./ammo.js"></script>
+    <script type="text/javascript" src="./CCDIKSolver.js"></script>
+    <script type="text/javascript" src="./MMDPhysics.js"></script>
+    <script type="text/javascript" src="./MMDAnimationHelper.js"></script>
+    <script type="text/javascript" src="./dat.gui.js"></script>
+    <script type="module" src="./OutlineEffect.js"></script>
+    <script type="module" src="animation.js"></script-->
+
+    
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/build/three.js"></script>
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/libs/mmdparser.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/libs/ammo.js"></script>
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/loaders/TGALoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/loaders/MMDLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/effects/OutlineEffect.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/animation/CCDIKSolver.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/animation/MMDPhysics.js"></script>
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/shaders/CopyShader.js"></script>
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/Detector.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/libs/dat.gui.min.js"></script>
+    <script type="module" src="animation_2.js"></script>
+</head>
+
+<body style="margin: 0;">
+    <script id="vertexShader" type="x-shader/x-vertex">
+        varying vec2 vUv;
+
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    </script>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        varying vec2 vUv;
+
+        uniform float strength;
+        uniform sampler2D tDiffuse;
+
+        void main() {
+            float n = 50.0 / strength;
+            gl_FragColor = texture2D( tDiffuse, floor( vUv * n ) / n );
+        }
+    </script>
+    <div id="mycanvas" style="width: 1200px; height: 800px;"></div>
+    <div id="subtitles" style="width: 1200px; height: 50px; text-align: center; z-index: 99999; display:block; background-color: black; color:white"></div>
+</body>
+
+</html>
