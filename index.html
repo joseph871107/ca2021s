@@ -99,7 +99,18 @@
 
 <h3> lab 5: </h3>
 <div>
-
+  心得: 鬼滅蜘蛛山的砍頭分鏡，一開始使用了
+  <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@11.0/manual/index.html">URP</a>專案當作起頭，匯入炭治郎並使用熱門的
+  <a href="https://github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample">ToonLitShader</a>，並試著在Mixamo找了比較相似的砍頭動作，配合原作動畫的時間修改動作的配速，讓它看起來比較有魄力。
+  <br>場景周圍加入了灰燼的粒子特效，並對著時間軸製作沿著Y軸旋轉的劍氣，當中使用了兩圈控制Y軸旋轉的特效，另一圈利用稍微角度偏移的作法來展示揮刀後的不可控制的劍氣並利用Unity URP專案內建的Post Processing Script 
+  <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/Volumes.html">Volumes</a>來調整
+  <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/post-processing-bloom.html">Bloom</a>以及
+  <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/post-processing-depth-of-field.html">Depth of field</a>。
+  <br>當中爆炸分鏡使用<a href="https://unity.com/unity/features/editor/art-and-design/cinemachine">Cinemachine</a>來調整模擬手抖以及爆炸風流抖動，但後來發現Cinemachine的virtual camera也可以單獨控制Volumes的特效的插件
+  <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@2.6/manual/CinemachineVolumeSettings.html">Cinemachine Volume Settings Extension</a>，所以稍微調整了一點爆炸時的對比強烈鏡頭。
+</div>
+<div>
+  <iframe width="560" height="315" src="https://drive.google.com/file/d/1UDRo7hMtFS4PkMDtMwanDgH_yW3gc26F/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
